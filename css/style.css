@@ -1,0 +1,698 @@
+:root {
+    --roxo-sujinho: #fefcff;
+    --roxo-quistock: #723c90;
+    --roxo2: #3e1554;
+    --preto: #11021a;
+    --azul: #7B4AE0;
+}
+
+*{
+    font-family: Poppins;
+    font-kerning: normal;
+    letter-spacing: 0.0em;
+    /*outline: 1px solid red;*/
+    margin: 0;
+    padding: 0;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    cursor: default;
+}
+
+.body-gradiente {
+    
+    background: linear-gradient(
+        to bottom,
+        var(--roxo-quistock),
+        var(--azul)
+    );
+
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--roxo-quistock);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+::selection {
+    background: #723c9040;
+    color: var(--roxo2);
+}
+
+main{
+    margin-top: clamp(3rem, 4.3vw, 10rem);
+}
+
+.section {
+    height: calc(100dvh - 4.3vw);
+    height: calc(100vh - 4.3vw);
+    max-width: 100%;
+    scroll-margin-top: clamp(3rem, 4.3vw, 10rem);
+
+    height: auto;
+    min-height: calc(100dvh - 4.3vw);
+}
+
+#beneficios, #palataforma, #quem-somos {
+    scroll-margin-top: clamp(3rem, 4.3vw, 10rem);
+}
+
+/* header */
+header{
+    background-color: var(--roxo-sujinho);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: clamp(3rem, 4.3vw, 10rem);
+    box-shadow: 0px 2px 4px #00000038;
+
+    padding: 0 min(1.5rem, 3%);
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logo{
+    align-self: center;
+    justify-self: flex-end;
+    max-width: clamp(1rem, 15vw, 10rem);
+    width: 100%;
+    height: auto;
+}
+
+#logo:hover{
+    cursor: pointer;
+}
+
+#botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-end;
+    gap: clamp(1rem, 5vw, 5rem);
+    font-size: clamp(0.5rem, 0.5vw + 0.5rem, 2rem)
+}
+
+#botoes a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    position: relative;
+    transition: color 300ms ease;
+}
+
+#botoes a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    background-color: #7B4AE0;
+    border-radius: 2px;
+    transition: width 300ms ease;
+}
+
+#botoes a:hover{
+    color: #7B4AE0;
+}
+
+#botoes a:hover::after{
+    width: 100%;
+}
+
+/* hero */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.5rem, 1.5vh, 2rem);
+
+    width: 100%;
+    padding: 0 min(4rem, 8%);
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fefefe95;
+    backdrop-filter: blur(6px);
+
+}
+
+#hero * {
+    position: relative;
+}
+
+#hero div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero p {
+    margin: 0;
+    padding: 0;
+
+    text-wrap: pretty;
+    text-align: center;
+}
+
+#hero p:nth-child(1) {
+    font-size: clamp(2rem, 3vw + 1rem, 70rem);
+    font-weight: 600;
+    line-height: 4.8rem;
+    width: 70%;
+    
+    color: var(--roxo-quistock);
+}
+
+.span {
+    color: #612383;
+}
+
+#hero p:nth-child(2) {
+    font-size: clamp(0.75rem, 0.9vw + 0.5rem, 3rem);
+    font-weight: 400;
+    width: 50vw;
+    padding: min(0.5rem, 2rem) 0;
+}
+
+.cta {
+    background:
+        linear-gradient(to right, var(--roxo-quistock), var(--azul));
+    border-radius: 3rem;
+    /*
+    height: clamp(2.5rem, 4vw, 5vw);
+    width: clamp(10rem, 22vw, 25rem);
+    */
+    border: none;
+    
+    padding: min(1rem, 4%) min(3rem, 6%);
+    font-size: clamp(0.5rem, 0.75vw + 0.5rem, 10rem);
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--roxo-sujinho);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    transition: 500ms ease-in-out;
+
+    position: relative;
+    z-index: 1;
+
+    cursor: pointer;
+}
+
+.cta::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background:
+        linear-gradient(to left, var(--roxo-quistock), var(--azul));
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    border-radius: 3rem;
+    z-index: -1;
+}
+
+.cta:hover::before {
+    opacity: 1;
+}
+
+/* beneficios */
+#beneficios {
+    box-sizing: border-box;
+    padding: min(3rem, 20%) min(4rem, 8%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2.5rem;
+}
+
+#beneficios * {
+    padding: 0; margin: 0;
+}
+
+.titulo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.titulo-container > p:nth-child(1), .titulo-container > p:nth-child(2) {
+    text-align: center;
+    text-wrap: pretty;
+}
+
+.titulo-container > p:nth-child(1) {
+    font-size: clamp(1.5rem, 2.5vw + 0.5rem, 10rem);
+    font-weight: 600;
+    width: 60vw;
+    color: var(--roxo-sujinho);
+}
+
+.titulo-container > p:nth-child(1) span {
+    color: #E5C9F5;
+}
+
+.titulo-container > p:nth-child(2) {
+    font-size: clamp(0.5rem, 0.6vw + 0.5rem, 2rem);
+    width: 50vw;
+    color: var(--roxo-sujinho);
+}
+
+.container-caixas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    width: 100%;
+}
+
+.caixa {
+    background-color: var(--roxo-sujinho);
+    aspect-ratio: unset;
+    min-height: 0;
+    height: clamp(3rem, 20vh, 20rem);
+    width: 20rem;
+    padding: min(1rem, 6%) !important;
+    /*
+    width: clamp(2vw, 20rem, 100vw);
+    height: clamp(2vw, 15rem, 100vh);
+    */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    border-radius: 1.5rem;
+}
+
+.titulo-caixa, .texto-caixa {
+    text-align: center;
+    text-wrap: pretty;
+}
+
+.titulo-caixa {
+    font-size: clamp(1.3rem, 1vw + .5rem, 3rem);
+    font-weight: 500;
+    color: var(--roxo-quistock);
+}
+
+.texto-caixa {
+    font-size: clamp(.7rem, .5vw + .5rem, 1rem);
+}
+
+#domine{
+        color: #790B88;
+        font-style: normal;
+        font-size: 45px;
+        font-weight: 600;
+}
+
+/* plataforma */
+#plataforma {
+    background-color: var(--roxo-sujinho);
+    border-radius: 4rem;
+
+    /*
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2vw, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(5vh, 1fr));
+
+    grid-template-areas:
+    "box-1";
+    */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    padding: min(3rem, 20%) min(4rem, 8%);
+}
+
+#plat {
+    color: var(--roxo-quistock);
+    font-weight: 600;
+    font-size: clamp(2rem, 2.5vw + 0.5rem, 10rem);
+    justify-self: center;
+}
+
+.plataforma-bottom-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 0 min(4rem, 8%);
+}
+
+.textos-plat {
+    color: var(--roxo-quistock);
+    text-wrap: pretty;
+}
+
+.textos-plat h4 {
+    font-weight: 400;
+}
+
+.interferencias h2, .interferencias h4, .fluxo h2, .fluxo h4 {
+    margin: 0; padding: 0;
+}
+
+.fluxo, .interferencias {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fluxo {
+    align-self: flex-start;
+    flex: 1.1;
+    min-width: 0;
+}
+
+.fluxo h2, .interferencias h2 {
+    font-size: clamp(.75rem, 1vw + 1rem, 2rem);
+}
+
+.interferencias {
+    align-self: flex-end;
+    width: 45vw;
+    flex: 1.2;
+    min-width: 0;
+}
+
+.fluxo h4, .interferencias h4 {
+    font-size: clamp(.5rem, .75vw + .5rem, 4rem);
+}
+
+#celular{
+    height: auto;
+    width: 25vw;
+    flex-shrink: 0;
+}
+
+/* quem somos */
+#quem-somos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    gap: 5rem;
+    padding: min(6.5rem, 20%) min(4rem, 8%);
+}
+
+/*
+.textos_plat{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 27%;
+    height: auto;
+    margin-left: 5%;
+    margin-top: -627px;
+    color: #723c90;
+    font-weight: 600;
+}
+
+.textos_plat2{
+    display: flex;
+    width: 30%;
+    height: auto;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 65%;
+    margin-top: 25px;
+    color: #723c90;
+    font-weight: 600;
+}
+    */
+
+
+#texto-quemSomos{
+    color: var(--roxo-sujinho);
+    width: 35vw;
+    align-self: center;
+    text-wrap: pretty;
+}
+
+#texto-quemSomos h2{
+    font-size: clamp(2rem, 2.5vw + 0.5rem, 10rem);
+    font-weight: 600;
+}
+
+#texto-quemSomos h4{
+    font-size: clamp(.75rem, .75vw + .5rem, 4rem);
+    font-weight: 400;
+}
+
+#img-quemsomos{
+    aspect-ratio: 4 / 3;
+    height: auto;
+    width: 40vw;
+    margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+    #hero p:nth-child(1) {
+        width: 100%;
+        line-height: 5.5vh;
+    }
+
+    #hero p:nth-child(2) {
+        width: 100%;
+    }
+
+    .titulo-container > p:nth-child(1) {
+        width: 85vw;
+    }
+
+    .titulo-container > p:nth-child(2) {
+        width: 85vw;
+    }
+
+    .container-caixas {
+        flex-direction: column;
+    }
+
+    .caixa {
+        width: 45vw;
+        padding: min(1rem, 6%) !important;
+    }
+
+    .plataforma-bottom-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .fluxo {
+        order: 0;
+    }
+
+    .interferencias {
+        order: 1;
+    }
+
+    .textos-plat {
+        margin: 0;
+    }
+
+    .fluxo, .interferencias {
+        align-self: center;
+        height: auto;
+        width: 80vw;
+        text-align: center;
+    }
+
+    #celular {
+        order: 2;
+        width: 60vw;
+        margin-bottom: 2.5rem;
+    }
+
+    .cta {
+        order: 3;
+        margin: 0;
+    }
+
+    #quem-somos {
+        gap: 2rem;
+    }
+
+    #texto-quemSomos {
+        width: 90vw;
+        text-align: center;
+    }
+
+    #img-quemsomos {
+        width: 80vw;
+    }
+}
+
+footer nav{
+    margin-top: -250px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: larger;
+}
+footer nav h2{
+    margin-bottom: 5px;
+    font-size: 25px;
+
+}
+footer nav a{
+    color: #723c90;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#links{
+    margin-left: 50%;
+}
+.inicio{
+    border: 2px solid transparent;
+    width: 8%;
+}
+.beneficio{
+    border: 2px solid transparent;
+    width: 8%;
+}
+.plataforma{
+    border: 2px solid transparent;
+    width: 8%;
+}
+.quem{
+    border: 2px solid transparent;
+    width: 19%;
+}
+
+.inicio:hover{
+    text-decoration: underline;
+}
+.beneficio:hover{
+    text-decoration: underline;
+}
+.plataforma:hover{
+    text-decoration: underline;
+}
+.quem:hover{
+    text-decoration: underline;
+}
+
+#legal{
+    margin-top: -240px;
+    margin-left: 75%;
+    margin-bottom: 180px;
+
+}
+
+.termos{
+    border: 2px solid transparent;
+    width: 40%;
+}
+.coockies{
+    border: 2px solid transparent;
+    width: 55%;
+}
+.privacidade{
+    border: 2px solid transparent;
+    width: 65%;
+}
+
+.termos:hover{
+    text-decoration: underline;
+}
+.coockies:hover{
+    text-decoration: underline;
+}
+.privacidade:hover{
+    text-decoration: underline;
+}
+
+footer img{
+    margin-left: 50px;
+}
+
+#logo1{
+    margin-top: 310px;
+    margin-bottom: 30px;
+}
+
+#email_pin{
+    display: flex;
+    flex-direction: column;
+}
+
+#email_pin img{
+    width: 30px;
+    margin-top: 20px;
+}
+
+#email_pin p{
+    margin-left: 90px;
+    margin-top: -30px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#direitos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97.35%;
+    border-top: 2px solid #5d5d5d;
+    margin-top: 90px;
+    padding: 20px;
+    font-weight: 600;
+}
